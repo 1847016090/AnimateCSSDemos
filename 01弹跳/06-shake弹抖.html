@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<style type="text/css">
+			/*这段代码可以改变我们的动画持续时间,延迟时间,以及动画执行的次数*/
+			/*#jq22 {
+				animate-duration: 10s;          
+				animate-delay: 1s;              
+				animate-iteration-count: 2;     
+			}*/
+		</style>
+	</head>
+
+	<body>
+		<div id="jq22" class="animated" style="font-size: 100px;color: orange;text-align: center;">
+			Animate.css
+		</div>
+	</body>
+	<script>
+		$(function() {
+			setInterval(()=> {
+				if(!$('#jq22').hasClass('shake')) {
+					$('#jq22').addClass('shake');			
+				} else {
+					$('#jq22').removeClass('shake');					
+				}
+				//动画执行完成之后我们可以给一个回调函数来给他做一些动画完成之后的事儿
+//				$('#jq22').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+//					
+//					alert("aaaa");
+//					
+//				});
+			}, 1000)
+
+			
+
+		});
+	</script>
+
+</html>

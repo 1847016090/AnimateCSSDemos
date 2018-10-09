@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" rel="stylesheet">
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<style type="text/css">
+			/*这段代码可以改变我们的动画持续时间,延迟时间,以及动画执行的次数*/
+			/*#jq22 {
+				animate-duration: 10s;          
+				animate-delay: 1s;              
+				animate-iteration-count: 2;     
+			}*/
+		</style>
+	</head>
+
+	<body style="padding-top: 200px;">
+		<div id="jq22" class="animated" style="font-size: 100px;color: orange;text-align: center;">
+			Animate.css
+		</div>
+	</body>
+	<script>
+//		animated bounce fadeIn         本地渐显
+//
+//		animated bounce fadeInDown     本地从上往下渐显
+//
+//		animated bounce fadeInDownBig  从上往下淡入
+//
+//		animated bounce fadeInLeft     从左淡入
+//
+//		animated bounce fadeInLeftBig  从左从小到大淡入
+//
+//		animated bounce fadeInRight    从右淡入
+//
+//		animated bounce fadeInRightBig 从右从小到大淡入
+//
+//		animated bounce fadeInUp       本地从下往上渐显
+//
+//		animated bounce fadeInUpBig    本地从下往上从小变大渐显
+		$(function() {
+			function Animate(input) {
+				$('#jq22').addClass(input);
+				
+				setTimeout(function() {
+					$('#jq22').removeClass(input);
+				}, 1000)
+				
+				$("#jq22").text(input);
+			}
+
+			let n = 0;
+			setInterval(() => {
+				n++;
+				let left = n % 9;
+				switch(left) {
+					case 0:
+						Animate("fadeIn")
+						break;
+					case 1:
+						Animate("fadeInDown")
+						break;
+					case 2:
+						Animate("fadeInDownBig")
+						break;
+					case 3:
+						Animate("fadeInLeft")
+						break;
+					case 4:
+						Animate("fadeInLeftBig")
+						break;
+					case 5:
+						Animate("fadeInRight")
+						break;
+					case 6:
+						Animate("fadeInRightBig")
+						break;
+					case 7:
+						Animate("fadeInUp")
+						break;
+					case 8:
+						Animate("fadeInUpBig")
+						break;
+					default:
+						break;
+
+				}
+
+				//动画执行完成之后我们可以给一个回调函数来给他做一些动画完成之后的事儿
+				//				$('#jq22').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+				//					
+				//					alert("aaaa");
+				//					
+				//				});
+			}, 2000)
+
+		});
+	</script>
+
+</html>
